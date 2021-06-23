@@ -64,24 +64,24 @@ public class LeagueOptionPane {
 	
 	// 6. Create another showMessageDialog() method that lets us choose the Message, Title, and Image
 	//    3 String parameters (one for the message, one for the title, and one for the fileName)
-	public static void showMessageDialog(String message, String title, String fileName) {
+	public static JPanel showMessageDialog(String message, String title, String fileName) {
 		// 1. Open example.png and make a GUI that looks like that
 		//    The message parameter is what we want to show on our pop-up
-		JFrame frame = new JFrame();
+		
+		
 		JPanel panel = new JPanel();
 		ImageIcon image =  loadImage(fileName);
+		
 		JLabel label = new JLabel(message);
-		frame.add(panel);
-		frame.add(image);
+		label.setIcon(image);
+		
+		
 		panel.add(label);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		frame.setTitle(title);
-		frame.pack();
+		return panel;
 		
 		
 		
-		frame.setLocationRelativeTo(null);
+		
 	}
 	// 7. Call this method in the Runner class
 	
